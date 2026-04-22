@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
@@ -349,7 +349,7 @@ export default function SettingsPage() {
                       <div
                         className="h-32 w-full bg-cover bg-center"
                         style={{
-                          backgroundImage: `url(${user?.coverImage || "/placeholder.svg?height=320&width=1280"})`,
+                          backgroundImage: `url(${user?.coverImage || "https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg"})`,
                         }}
                       />
                     </div>
@@ -766,4 +766,5 @@ export default function SettingsPage() {
     </div>
   )
 }
+
 
