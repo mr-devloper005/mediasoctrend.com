@@ -1,4 +1,4 @@
-﻿"use client"
+"use client"
 
 import { useRef, useState } from "react"
 import { useRouter } from "next/navigation"
@@ -124,7 +124,7 @@ export default function NewArticlePage() {
       slug,
       excerpt,
       content,
-      coverImage: coverImage || "/placeholder.svg?height=720&width=1280",
+      coverImage: coverImage || "https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg",
       author: user,
       category: category || "General",
       tags: tags.length > 0 ? tags : ["New"],
@@ -429,3 +429,4 @@ export default function NewArticlePage() {
     </div>
   )
 }
+
