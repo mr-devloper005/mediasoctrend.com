@@ -59,7 +59,7 @@ const recentActivity = [
     action: "commented on your article",
     target: "Building Modern Web Apps",
     time: "5 min ago",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg",
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ const recentActivity = [
     action: "liked your listing",
     target: "Tech Solutions Inc.",
     time: "15 min ago",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg",
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ const recentActivity = [
     action: "started following you",
     target: "",
     time: "1 hour ago",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg",
   },
   {
     id: 4,
@@ -86,7 +86,7 @@ const recentActivity = [
     action: "sent you a message about",
     target: "2019 Honda Civic",
     time: "2 hours ago",
-    avatar: "/placeholder.svg?height=40&width=40",
+    avatar: "https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg",
   },
 ]
 
@@ -779,4 +779,5 @@ export default function DashboardPage() {
     </div>
   )
 }
+
 

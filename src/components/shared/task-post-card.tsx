@@ -51,7 +51,7 @@ const getImageUrl = (post: SitePost, content: ListingContent) => {
   const contentLogo = typeof contentAny.logo === 'string' ? contentAny.logo : null
   if (contentLogo) return contentLogo
 
-  return '/placeholder.svg?height=640&width=960'
+  return '/brand/news-grid.jpg'
 }
 
 const cardStyles = {
@@ -205,3 +205,4 @@ export function TaskPostCard({
     </Link>
   )
 }
+

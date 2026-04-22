@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -69,7 +69,7 @@ export default function NewCollectionPage() {
                 updatedAt: new Date().toISOString(),
                 isPrivate,
                 bookmarks: [],
-                coverImages: ['/placeholder.svg?height=240&width=240'],
+                coverImages: ['https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg'],
               }
               const stored = loadFromStorage<BookmarkCollection[]>(storageKeys.bookmarkCollections, [])
               saveToStorage(storageKeys.bookmarkCollections, [newCollection, ...stored])
@@ -85,3 +85,4 @@ export default function NewCollectionPage() {
     </PageShell>
   )
 }
+

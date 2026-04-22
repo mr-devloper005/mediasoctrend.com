@@ -1,115 +1,104 @@
-﻿'use client'
+'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
-import { PageShell } from '@/components/shared/page-shell'
-import { Card, CardContent } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
+import Link from 'next/link'
+import { NavbarShell } from '@/components/shared/navbar-shell'
+import { Footer } from '@/components/shared/footer'
 import { Button } from '@/components/ui/button'
-import {
-  Dialog,
-  DialogContent,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog'
+import { Badge } from '@/components/ui/badge'
+import { SITE_CONFIG } from '@/lib/site-config'
 import { useToast } from '@/components/ui/use-toast'
-import { mockPressAssets, mockPressCoverage } from '@/data/mock-data'
+
+const brandAssets = [
+  {
+    id: 'logo-mark',
+    title: 'Logo mark',
+    description: 'Vector-friendly placeholder mark for light layouts.',
+    fileType: 'SVG',
+    href: '/placeholder-logo.svg',
+  },
+  {
+    id: 'og-default',
+    title: 'Open Graph default',
+    description: 'Default share image path configured for this site.',
+    fileType: 'Asset',
+    href: SITE_CONFIG.defaultOgImage.startsWith('/') ? SITE_CONFIG.defaultOgImage : `/${SITE_CONFIG.defaultOgImage}`,
+  },
+] as const
 
 export default function PressPage() {
   const { toast } = useToast()
-  const [activeAssetId, setActiveAssetId] = useState<string | null>(null)
-  const activeAsset = mockPressAssets.find((asset) => asset.id === activeAssetId)
 
   return (
-    <PageShell
-      title="Press"
-      description="Media resources, brand assets, and press coverage."
-    >
-      <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="border-border bg-card">
-          <CardContent className="p-6 space-y-3">
-            <h2 className="text-lg font-semibold text-foreground">Press Kit</h2>
-            <p className="text-sm text-muted-foreground">
-              Download logos, product screenshots, and brand guidelines for media use.
-            </p>
-            <div className="grid gap-2">
-              {mockPressAssets.map((asset) => (
-                <div key={asset.id} className="rounded-lg border border-border bg-secondary/40 px-4 py-3">
-                  <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-foreground">{asset.title}</p>
-                      <p className="text-xs text-muted-foreground">{asset.description}</p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="secondary">{asset.fileType}</Badge>
-                      <Button size="sm" variant="outline" onClick={() => setActiveAssetId(asset.id)}>
-                        Preview
-                      </Button>
-                      <Button
-                        size="sm"
-                        onClick={() =>
-                          toast({
-                            title: 'Download started',
-                            description: `${asset.title} is downloading.`,
-                          })
-                        }
-                      >
-                        Download
-                      </Button>
-                    </div>
+    <div className="min-h-screen bg-[#e2dfd0] text-[#2a211c]">
+      <NavbarShell />
+      <main className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <header className="max-w-2xl">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f97300]">Press</p>
+          <h1 className="font-display mt-3 text-4xl font-semibold text-[#32012f]">Brand resources</h1>
+          <p className="mt-4 text-sm leading-relaxed text-[#524c42]">
+            Approved marks and default imagery for media coverage of {SITE_CONFIG.name}. Need a custom angle or executive
+            comment? Email{' '}
+            <a className="font-semibold text-[#c2410c] hover:underline" href={`mailto:press@${SITE_CONFIG.domain}`}>
+              press@{SITE_CONFIG.domain}
+            </a>
+            .
+          </p>
+        </header>
+
+        <div className="mt-12 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <section className="rounded-2xl border border-[#32012f]/10 bg-[#fbf9f4] p-6 shadow-sm sm:p-8">
+            <h2 className="text-lg font-semibold text-[#32012f]">Downloads</h2>
+            <div className="mt-6 space-y-4">
+              {brandAssets.map((asset) => (
+                <div key={asset.id} className="flex flex-col gap-3 rounded-xl border border-[#32012f]/10 bg-white/80 p-4 sm:flex-row sm:items-center sm:justify-between">
+                  <div>
+                    <p className="text-sm font-medium text-[#32012f]">{asset.title}</p>
+                    <p className="mt-1 text-xs text-[#524c42]">{asset.description}</p>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Badge variant="secondary">{asset.fileType}</Badge>
+                    <Button size="sm" variant="outline" asChild>
+                      <Link href={asset.href} target="_blank" rel="noreferrer">
+                        Open
+                      </Link>
+                    </Button>
+                    <Button
+                      size="sm"
+                      className="bg-[#f97300] text-[#1a0f0c] hover:bg-[#f97300]/90"
+                      onClick={() =>
+                        toast({
+                          title: 'Download',
+                          description: `Save ${asset.title} from the opened file.`,
+                        })
+                      }
+                    >
+                      Save
+                    </Button>
                   </div>
                 </div>
               ))}
             </div>
-          </CardContent>
-        </Card>
-        <div className="space-y-4">
-          {mockPressCoverage.map((item) => (
-            <Card key={item.id} className="border-border bg-card transition-transform hover:-translate-y-1">
-              <CardContent className="p-6">
-                <div className="text-xs uppercase tracking-wide text-muted-foreground">{item.outlet}</div>
-                <p className="mt-2 text-sm text-foreground">{item.headline}</p>
-                <p className="mt-2 text-xs text-muted-foreground">{item.date}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
+          </section>
 
-      <Dialog open={Boolean(activeAsset)} onOpenChange={() => setActiveAssetId(null)}>
-        <DialogContent className="max-w-3xl">
-          <DialogHeader>
-            <DialogTitle>{activeAsset?.title}</DialogTitle>
-          </DialogHeader>
-          {activeAsset?.previewUrl && (
-            <div className="relative aspect-[16/9] overflow-hidden rounded-xl border border-border bg-muted">
-              <Image
-                src={activeAsset.previewUrl}
-                alt={activeAsset.title}
-                fill
-                className="object-cover"
-              />
+          <aside className="space-y-6">
+            <div className="relative aspect-video overflow-hidden rounded-2xl border border-[#32012f]/10 shadow-md">
+              <Image src="/brand/news-grid.jpg" alt="Newsroom grid preview" fill className="object-cover" sizes="480px" />
             </div>
-          )}
-          <p className="text-sm text-muted-foreground">{activeAsset?.description}</p>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setActiveAssetId(null)}>
-              Close
-            </Button>
-            <Button
-              onClick={() =>
-                toast({
-                  title: 'Download started',
-                  description: `${activeAsset?.title} is downloading.`,
-                })
-              }
-            >
-              Download {activeAsset?.fileType}
-            </Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    </PageShell>
+            <div className="rounded-2xl border border-[#32012f]/10 bg-[#32012f] p-6 text-[#f4ede3]">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#f97300]">Coverage</p>
+              <p className="mt-3 text-sm leading-relaxed text-[#d8cfc3]">
+                For interview requests or data points about readership, include your deadline and outlet in the subject line.
+              </p>
+              <Button asChild variant="secondary" className="mt-5 w-full bg-[#f97300] text-[#1a0f0c] hover:bg-[#f97300]/90">
+                <Link href="/contact">Contact communications</Link>
+              </Button>
+            </div>
+          </aside>
+        </div>
+      </main>
+      <Footer />
+    </div>
   )
 }
+

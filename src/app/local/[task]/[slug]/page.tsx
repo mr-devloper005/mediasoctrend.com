@@ -49,7 +49,7 @@ const getImageUrls = (post: any, content: PostContent) => {
   const merged = [...mediaImages, ...contentImages];
   if (merged.length) return merged;
   if (isValidImageUrl(content.logo)) return [content.logo as string];
-  return ["/placeholder.svg?height=900&width=1400"];
+  return ["/brand/news-grid.jpg"];
 };
 
 const toNumber = (value?: number | string) => {

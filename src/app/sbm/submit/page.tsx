@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
@@ -80,7 +80,7 @@ export default function SubmitBookmarkPage() {
         .slice(0, 60),
       url,
       description,
-      image: '/placeholder.svg?height=720&width=1280',
+      image: 'https://img.freepik.com/free-photo/business-team-meeting-boardroom_23-2149095375.jpg',
       domain,
       tags: tags.length > 0 ? tags : ['New'],
       category: category || 'General',
@@ -242,3 +242,4 @@ export default function SubmitBookmarkPage() {
     </div>
   )
 }
+
