@@ -107,8 +107,8 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
     description: 'Open PDFs and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Press releases',
-    description: 'Browse the latest press releases and media announcements.',
+    title: 'Press media',
+    description: 'Browse the latest press media and media announcements.',
   },
 }
 
@@ -127,7 +127,7 @@ export const taskIntroCopy: Record<
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
   org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Press releases',
+    title: 'Press media',
     paragraphs: [
       'This archive lists every published announcement with category context, publication date, and a short preview before you open the full story.',
       'Use filters to focus on a topic or time window, or jump to keyword search when you know exactly what you are looking for.',

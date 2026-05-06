@@ -104,7 +104,6 @@ export async function TaskDetailPageOverride({ slug }: { task: TaskKey; slug: st
             </h1>
             {subtitle ? <p className="mt-5 text-lg leading-relaxed text-[#e0d8cc]">{subtitle}</p> : null}
             <div className="mt-8 flex flex-wrap items-center gap-3 text-sm text-[#c9bfb0]">
-              <span className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-[#fdf8f2]">{dateLabel}</span>
               <span>By {post.authorName || 'Media desk'}</span>
             </div>
           </div>

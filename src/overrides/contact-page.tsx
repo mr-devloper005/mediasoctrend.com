@@ -26,20 +26,7 @@ export function ContactPageOverride() {
                 For distribution questions, editorial review, or partnership conversations, reach the team directly. We route
                 requests to the right lane—no generic ticket black hole.
               </p>
-              <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-[#32012f]/10 bg-white/80 p-5 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#524c42]">Press &amp; editorial</p>
-                  <a className="mt-3 block text-lg font-semibold text-[#c2410c] hover:underline" href={`mailto:${deskMail}`}>
-                    {deskMail}
-                  </a>
-                </div>
-                <div className="rounded-2xl border border-[#32012f]/10 bg-white/80 p-5 shadow-sm">
-                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#524c42]">General</p>
-                  <a className="mt-3 block text-lg font-semibold text-[#c2410c] hover:underline" href={`mailto:${helloMail}`}>
-                    {helloMail}
-                  </a>
-                </div>
-              </div>
+
             </div>
             <div className="relative aspect-[4/5] max-h-[420px] overflow-hidden rounded-2xl border border-[#32012f]/10 shadow-[0_24px_60px_rgba(32,8,28,0.12)] lg:max-h-none">
               <Image
@@ -121,11 +108,6 @@ export function ContactPageOverride() {
               <div className="rounded-2xl border border-[#32012f]/10 bg-white/70 p-6">
                 <p className="text-sm font-semibold text-[#32012f]">Prefer to browse first?</p>
                 <ul className="mt-3 space-y-2 text-sm text-[#524c42]">
-                  <li>
-                    <a className="font-medium text-[#c2410c] hover:underline" href="/pricing">
-                      Compare distribution tiers
-                    </a>
-                  </li>
                   <li>
                     <a className="font-medium text-[#c2410c] hover:underline" href="/updates">
                       Read recent releases
