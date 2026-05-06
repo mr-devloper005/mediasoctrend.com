@@ -75,7 +75,7 @@ export async function TaskListPageOverride({
       <main className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <header className="border-b border-[#32012f]/10 pb-10">
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f97300]">Newsroom archive</p>
-          <h1 className="font-display mt-3 text-4xl font-semibold tracking-[-0.03em] text-[#32012f]">Press releases & updates</h1>
+          <h1 className="font-display mt-3 text-4xl font-semibold tracking-[-0.03em] text-[#32012f]">Press media & updates</h1>
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#524c42]">
             Filter by topic or recency, or jump to search for keyword matches across every published story.
           </p>
@@ -152,15 +152,8 @@ export async function TaskListPageOverride({
                   />
                 </div>
                 <div className="flex flex-1 flex-col p-5">
-                  <div className="flex items-center justify-between gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#f97300]">
+                  <div className="flex items-center gap-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#f97300]">
                     <span>{getPostCategoryLabel(post)}</span>
-                    <span className="text-[#6b6258]">
-                      {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', {
-                        month: 'short',
-                        day: 'numeric',
-                        year: 'numeric',
-                      })}
-                    </span>
                   </div>
                   <h2 className="font-display mt-2 text-lg font-semibold leading-snug text-[#32012f] group-hover:text-[#c2410c]">{post.title}</h2>
                   <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-[#524c42]">{excerpt(post.summary)}</p>

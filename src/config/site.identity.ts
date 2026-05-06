@@ -4,7 +4,7 @@ export const siteIdentity = {
   tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Press releases & media announcements',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    'mediaSocTrend helps organizations publish credible press releases with editorial layouts, structured archives, and share-ready story pages.',
+    'mediaSocTrend helps organizations publish credible press media with editorial layouts, structured archives, and share-ready story pages.',
   domain: process.env.NEXT_PUBLIC_SITE_DOMAIN || 'mediasoctrend.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://mediasoctrend.com',
   ogImage: process.env.NEXT_PUBLIC_SITE_OG_IMAGE || '/og-default.png',

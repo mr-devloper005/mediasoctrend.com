@@ -99,12 +99,6 @@ export async function HomePageOverride() {
                 Browse releases
                 <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                href="/pricing"
-                className="inline-flex items-center rounded-full border border-[#32012f]/25 bg-transparent px-6 py-3 text-sm font-semibold text-[#32012f] transition hover:bg-[#32012f]/5"
-              >
-                View pricing
-              </Link>
             </div>
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#32012f]/10 shadow-[0_24px_60px_rgba(32,8,28,0.12)]">
@@ -192,13 +186,7 @@ export async function HomePageOverride() {
                   </p>
                   <h3 className="font-display mt-2 text-lg font-semibold leading-snug text-[#32012f] group-hover:text-[#c2410c]">{post.title}</h3>
                   <p className="mt-3 line-clamp-3 flex-1 text-sm leading-relaxed text-[#524c42]">{excerpt(post.summary, 140)}</p>
-                  <p className="mt-4 text-xs text-[#6b6258]">
-                    {new Date(post.publishedAt || Date.now()).toLocaleDateString('en-US', {
-                      month: 'short',
-                      day: 'numeric',
-                      year: 'numeric',
-                    })}
-                  </p>
+
                 </div>
               </Link>
             ))}
