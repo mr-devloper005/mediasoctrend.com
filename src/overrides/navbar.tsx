@@ -7,8 +7,7 @@ import { Menu, Search, X } from 'lucide-react'
 export const NAVBAR_OVERRIDE_ENABLED = true
 
 const navLinks = [
-  { label: 'Press releases', href: '/updates' },
-  { label: 'Pricing', href: '/pricing' },
+  { label: 'Press media', href: '/updates' },
   { label: 'About', href: '/about' },
   { label: 'Contact', href: '/contact' },
 ]

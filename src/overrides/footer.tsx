@@ -7,8 +7,7 @@ const columns = [
   {
     title: 'Distribution',
     links: [
-      { label: 'Press releases', href: '/updates' },
-      { label: 'Pricing', href: '/pricing' },
+      { label: 'Press media', href: '/updates' },
       { label: 'Search', href: '/search' },
     ],
   },
@@ -17,7 +16,6 @@ const columns = [
     links: [
       { label: 'About', href: '/about' },
       { label: 'Contact', href: '/contact' },
-      { label: 'Press kit', href: '/press' },
     ],
   },
   {
