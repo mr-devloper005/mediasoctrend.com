@@ -46,7 +46,7 @@ export function ContactPageOverride() {
             <form action={mailtoAction} method="post" encType="text/plain" className="rounded-2xl border border-[#32012f]/10 bg-[#fbf9f4] p-6 shadow-sm sm:p-8">
               <h2 className="font-display text-xl font-semibold text-[#32012f]">Send a note</h2>
               <p className="mt-2 text-sm text-[#524c42]">
-                Opens your email app with a pre-filled message. You can also email us directly at {helloMail}.
+                Opens your email app with a pre-filled message.
               </p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <label className="grid gap-1.5 text-sm">
